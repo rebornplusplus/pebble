@@ -14,7 +14,7 @@ void handle_signal(int sig) {
 			exit(sig);
 		}
 	}
-		
+
 	printf("Received signal (%d)\n", sig);
 	exit(sig);
 }
