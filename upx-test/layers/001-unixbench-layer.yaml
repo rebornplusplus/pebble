@@ -1,0 +1,12 @@
+summary: Unixbench layer
+
+description: |
+    Run Unixbench as a Pebble service
+
+services:
+    unixbench:
+        override: replace
+        summary: Run unixbench
+        command: /unixbench/UnixBench/Run
+        startup: enabled
+        on-success: shutdown

@@ -1,0 +1,17 @@
+FROM golang
+RUN git clone "https://github.com/canonical/pebble.git" /pebble
+WORKDIR /pebble
+RUN go build -ldflags="-w -s" ./cmd/pebble/
+
+# RUN apt update -y && apt install -y upx
+# RUN upx pebble
+# RUN stat pebble
+
+ENV PEBBLE="/pebble"
+COPY layers/ ${PEBBLE}/layers
+
+RUN apt update -y && apt install -y libx11-dev libgl1-mesa-dev libxext-dev perl perl-modules make git
+RUN git clone "https://github.com/kdlucas/byte-unixbench.git" /unixbench
+WORKDIR /unixbench/UnixBench
+
+ENTRYPOINT ["/pebble/pebble"]

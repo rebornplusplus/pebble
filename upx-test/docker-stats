@@ -1,0 +1,10 @@
+# in vm (Ubuntu 22.04)
+CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O     PIDS
+b68602811516   pebble:no-upx   104.56%   9.734MiB / 18.05GiB   0.05%     4.09kB / 0B   0B / 48.7MB   13
+92b4fca4cea5   pebble:upx      104.80%   16.69MiB / 18.05GiB   0.09%     4.43kB / 0B   0B / 31.4MB   12
+
+# in pc (Ubuntu 18.04)
+CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O     PIDS
+7e7b0a7caf36   pebble:no-upx   99.65%    10.82MiB / 11.59GiB   0.09%     6.37kB / 0B   0B / 1.29MB   12
+008108f8957a   pebble:upx      99.71%    17.81MiB / 11.59GiB   0.15%     6.11kB / 0B   0B / 680kB    12
+
