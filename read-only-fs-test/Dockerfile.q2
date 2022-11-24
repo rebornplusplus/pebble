@@ -1,0 +1,9 @@
+FROM golang AS builder
+RUN git clone "https://github.com/canonical/pebble.git" /pebble
+WORKDIR /pebble
+RUN go build -o pebble ./cmd/pebble/
+
+FROM ubuntu
+COPY --from=builder /pebble/pebble /
+RUN mkdir -pv /var/lib/pebble/default
+ENTRYPOINT ["/pebble"]

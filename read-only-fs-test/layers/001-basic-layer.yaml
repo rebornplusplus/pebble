@@ -1,0 +1,12 @@
+summary: Simple layer
+
+description: |
+    A better description for a simple layer.
+
+services:
+    srv1:
+        override: replace
+        summary: Service summary
+        command: ./hello
+        startup: enabled
+        on-success: shutdown
