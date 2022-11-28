@@ -1,0 +1,13 @@
+summary: Simple layer
+
+description: |
+    This layer consists -
+      * An HTTP Server serving Welcome messages
+
+services:
+    srv1:
+        override: replace
+        summary: HTTP Server
+        command: ./server -timeout=4
+        startup: enabled
+        on-success: shutdown
